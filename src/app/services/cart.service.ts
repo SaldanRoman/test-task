@@ -8,6 +8,8 @@ import { Product } from './products.service'
 export class CartService{
     cartProducts: Product[] = [];
     sum: number = 0;
+    cartCount = 0;
+    
     constructor() {
         if(! JSON.parse(localStorage.getItem('cartProds')) ){
             localStorage.setItem('cartProds', JSON.stringify(this.cartProducts))
@@ -35,7 +37,10 @@ export class CartService{
     getSum() {
         this.sum = 0;
         this.cartProducts.forEach(elm=> this.sum+=elm.price);
+    }
 
+    updateCartCount() {
+        this.cartCount = JSON.parse(localStorage.getItem('cartProds')).length
     }
 
 }

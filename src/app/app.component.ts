@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartCountService } from './services/cartcount.service';
+import { CartService } from './services/cart.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { CartCountService } from './services/cartcount.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private cartCount: CartCountService) { }
+  constructor(private cartService: CartService) { }
   title = 'test-task';
   
   ngOnInit() {
-    this.cartCount.update()
+    this.cartService.updateCartCount()
   }
 }
