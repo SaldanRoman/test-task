@@ -6,7 +6,7 @@ Instructions:
 
 open terminal and write this commands:
 
-- cd frontend-app
+- cd test-task
 - npm install
 - ng serve --port 4000
 
