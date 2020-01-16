@@ -9,14 +9,6 @@ import { CartService } from './services/cart.service';
 })
 export class AppComponent implements OnInit {
 
-  formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-
-    return value;
-  }
-
   constructor(private cartService: CartService) {}
   title = 'test-task';
 
