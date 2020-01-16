@@ -9,15 +9,14 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = []
-  constructor(private productsJson: ProductsService, private cartService: CartService) { 
+  constructor(private productsJson: ProductsService, private cartService: CartService) {
     productsJson.fetchProducts().subscribe(resp => this.products = resp)
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  addProductToCart(id:number) {
-    const selectedProduct = this.products.find((element)=> element.id === id);
+  addProductToCart(id: number) {
+    const selectedProduct = this.products.find((element) => element.id === id);
     this.cartService.addToCart(selectedProduct);
     this.cartService.updateCartCount();
   }

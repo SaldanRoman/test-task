@@ -4,12 +4,25 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: darkred;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    cursor: pointer;
+    outline: none;
 }
 
 .header-links-link{
-    color: #fff;
+    color: #696969;
     text-decoration: none;
+    box-sizing: border-box;
+    padding: 3px 0;
+}
+
+.header-links-link:hover {
+    transition: .3s;
+    border-top: 2px solid #000000d0;
 }
 
 .header-links-link:first-child {
@@ -17,7 +30,7 @@
 }
 
 .active {
-    color: dimgray;
+    color: #000;
 }
 
 .cart-items-count {
@@ -32,3 +45,18 @@
         flex-direction: row;
     }
 }
+
+mat-slider {
+    width: 300px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  

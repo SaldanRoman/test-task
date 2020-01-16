@@ -1,46 +1,46 @@
 import { Injectable } from "@angular/core";
-import { Product } from './products.service'
+import { Product } from './products.service';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class CartService{
-    cartProducts: Product[] = [];
-    sum: number = 0;
-    cartCount = 0;
-    
-    constructor() {
-        if(! JSON.parse(localStorage.getItem('cartProds')) ){
-            localStorage.setItem('cartProds', JSON.stringify(this.cartProducts))
-        } else {
-            this.getFromLocalStoage()
-        }
-    }
-    getFromLocalStoage() {
-        this.cartProducts = JSON.parse(localStorage.getItem('cartProds'))
-    }
-    postToLocalStorage() {
-        localStorage.setItem('cartProds', JSON.stringify(this.cartProducts) )
-    }
+export class CartService {
+  cartProducts: Product[] = [];
+  sum: number = 0;
+  cartCount = 0;
 
-    addToCart(productsObj: Product) {
-        this.cartProducts.push(productsObj);
-        this.postToLocalStorage()
+  constructor() {
+    if (!JSON.parse(localStorage.getItem('cartProds'))) {
+      localStorage.setItem('cartProds', JSON.stringify(this.cartProducts));
+    } else {
+      this.getFromLocalStoage();
     }
+  }
+  getFromLocalStoage() {
+    this.cartProducts = JSON.parse(localStorage.getItem('cartProds'));
+  }
+  postToLocalStorage() {
+    localStorage.setItem('cartProds', JSON.stringify(this.cartProducts));
+  }
 
-    removeFromCart(index:number) {
-        this.cartProducts.splice(index,1);
-        this.postToLocalStorage()
-    }
+  addToCart(productsObj: Product) {
+    this.cartProducts.push(productsObj);
+    this.postToLocalStorage();
+  }
 
-    getSum() {
-        this.sum = 0;
-        this.cartProducts.forEach(elm=> this.sum+=elm.price);
-    }
+  removeFromCart(index: number) {
+    this.cartProducts.splice(index, 1);
+    this.postToLocalStorage();
+  }
 
-    updateCartCount() {
-        this.cartCount = JSON.parse(localStorage.getItem('cartProds')).length
-    }
+  getSum() {
+    this.sum = 0;
+    this.cartProducts.forEach(elm => this.sum += elm.price);
+  }
+
+  updateCartCount() {
+    this.cartCount = JSON.parse(localStorage.getItem('cartProds')).length
+  }
 
 }

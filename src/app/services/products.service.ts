@@ -9,11 +9,13 @@ export interface Product {
     price: number
 }
 
-@Injectable({providedIn:'root'})
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductsService {
-    constructor(private http: HttpClient) {}
-    
-    public fetchProducts():Observable<Product[]> {
-        return this.http.get<Product[]>('assets/products.json')
-    }
+  constructor(private http: HttpClient) {}
+
+  public fetchProducts(): Observable < Product[] > {
+    return this.http.get < Product[] > ('assets/products.json')
+  }
 }
