@@ -13,16 +13,20 @@
     outline: none;
 }
 
+.header-links {
+    display: flex;
+    flex-direction: column;
+}
+
 .header-links-link{
     color: #696969;
     text-decoration: none;
-    box-sizing: border-box;
-    padding: 3px 0;
+    padding: 5px 0;
 }
 
 .header-links-link:hover {
     transition: .3s;
-    border-top: 2px solid #000000d0;
+    border-top: 1px solid #000000d0;
 }
 
 .header-links-link:first-child {
@@ -42,6 +46,10 @@
 
 @media only screen and (min-width: 301px) {
     .header {
+        flex-direction: row;
+    }
+    
+    .header-links {
         flex-direction: row;
     }
 }

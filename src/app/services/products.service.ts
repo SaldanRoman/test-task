@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Product {
-    id: number,
+  id: number,
     name: string,
     label: string,
-    price: number
-}
+    price: number,
+    count ? : number,
+    fixPrice ? : number
+  }
 
 @Injectable({
   providedIn: 'root'

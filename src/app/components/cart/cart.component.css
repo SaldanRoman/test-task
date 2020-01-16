@@ -2,7 +2,16 @@ h1 {
     text-align: center;
 }
 
+.total-sum {
+    position: fixed;
+    bottom: 0;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+}
+
 h3 {
     text-align: right;
     padding: 15px;
 }
+

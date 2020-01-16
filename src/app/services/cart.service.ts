@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { Product } from './products.service';
 
 @Injectable({
@@ -43,4 +44,24 @@ export class CartService {
     this.cartCount = JSON.parse(localStorage.getItem('cartProds')).length
   }
 
-}
+  changePrice(idx: number, action:string) {
+    if (this.cartProducts[idx].fixPrice === undefined) {
+      this.cartProducts[idx].fixPrice = this.cartProducts[idx].price;
+      this.cartProducts[idx].count = 1;
+    }
+
+    if(action === '+') {
+      this.cartProducts[idx].price += this.cartProducts[idx].fixPrice;
+      this.cartProducts[idx].count++;
+    }
+
+    if (action === '-') {
+      if (this.cartProducts[idx].count <= 1) {return}
+      this.cartProducts[idx].price -= this.cartProducts[idx].fixPrice;
+      this.cartProducts[idx].count--;
+    }
+    this.postToLocalStorage();
+    this.getSum()
+  }
+
+  }

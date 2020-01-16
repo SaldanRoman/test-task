@@ -16,6 +16,10 @@ export class CartComponent implements OnInit {
     this.cartService.updateCartCount();
   }
 
+  countOfProduct(idx:number, action:string) {
+    this.cartService.changePrice(idx, action)
+  }
+
   ngOnInit() {
     this.cartService.getSum()
   }

@@ -45,6 +45,8 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 200px;
+  box-sizing: border-box;
+  width: calc(200px - 10px);
 }
 
 .product-card-name {
@@ -62,9 +64,4 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-
-  .product-card {
-    width: calc(200px - 10px)
-  }
-
 }
