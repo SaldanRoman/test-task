@@ -1,0 +1,8 @@
+<div class="product-cards-container">
+    <div class="product-card" *ngFor="let product of products">
+        <h1 class="product-card-name">{{product.name | titlecase}}</h1>
+        <p class="product-card-label">{{product.label}}</p>
+        <p class="product-card-price">Price: {{product.price}}</p>
+        <button class="btn" (click)="addProductToCart(product.id)">ADD TO CART</button>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: darkred;
+}
+
+.header-links-link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-links-link:first-child {
+    margin-right: 15px;
+}
+
+.active {
+    color: dimgray;
+}
+
+.cart-items-count {
+    background-color: dimgray;
+    color: #fff;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+@media only screen and (min-width: 301px) {
+    .header {
+        flex-direction: row;
+    }
+}

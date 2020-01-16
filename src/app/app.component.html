@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>{{title | titlecase}}</h1>
+  <div class="header-links">
+    <a class="header-links-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/']">Products</a>
+    <a class="header-links-link" routerLinkActive="active" [routerLink]="['/cart']">Cart <span class="cart-items-count"
+        *ngIf="cartCount.cartCount>0">{{cartCount.cartCount}}</span></a>
+  </div>
+</div>
+
+<router-outlet (onAdd)="updateCarItemstCount()"></router-outlet>

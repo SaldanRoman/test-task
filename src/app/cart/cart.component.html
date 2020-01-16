@@ -1,0 +1,13 @@
+<div class="product-cards-container" *ngIf="cart.cartProducts.length>0; else addToCart">
+    <div class="product-card" *ngFor="let product of cart.cartProducts; let idx=index;">
+        <h1 class="product-card-name">{{product.name | titlecase}}</h1>
+        <p class="product-card-label">{{product.label}}</p>
+        <p class="product-card-price" >Price: {{product.price}}</p>
+        <button class="btn" (click)="romoveFromCart(idx)">REMOVE</button>
+    </div>
+</div>
+<ng-template #addToCart> <h1>Your cart is empty...</h1></ng-template>
+<div class="total-sum" *ngIf="cart.sum>0"> 
+    <hr>
+    <h3> Sum: {{cart.sum}}</h3>
+</div>
