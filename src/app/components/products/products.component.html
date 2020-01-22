@@ -14,3 +14,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<app-alreadyadded (close)="closeAlreadyAddedModal()" *ngIf="cartService.isAlreadiAdded"></app-alreadyadded>

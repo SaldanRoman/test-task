@@ -8,7 +8,8 @@ export interface Product {
     label: string,
     price: number,
     count ? : number,
-    fixPrice ? : number
+    fixPrice ? : number,
+    randomId ? : any
   }
 
 @Injectable({

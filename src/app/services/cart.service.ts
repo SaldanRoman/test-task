@@ -10,6 +10,7 @@ export class CartService {
   cartProducts: Product[] = [];
   sum: number = 0;
   cartCount = 0;
+  isAlreadiAdded: boolean = false;
 
   constructor() {
     if (!JSON.parse(localStorage.getItem('cartProds'))) {
@@ -18,16 +19,25 @@ export class CartService {
       this.getFromLocalStoage();
     }
   }
+
   getFromLocalStoage() {
     this.cartProducts = JSON.parse(localStorage.getItem('cartProds'));
   }
+
   postToLocalStorage() {
     localStorage.setItem('cartProds', JSON.stringify(this.cartProducts));
   }
 
   addToCart(productsObj: Product) {
+    this.getFromLocalStoage();
+    this.cartProducts.forEach(elm=>{
+      if(elm.id===productsObj.id) {
+        this.isAlreadiAdded = true;
+      }
+    })
+    if(this.isAlreadiAdded){return}
     this.cartProducts.push(productsObj);
-    this.postToLocalStorage();
+    this.postToLocalStorage();    
   }
 
   removeFromCart(index: number) {
@@ -61,7 +71,7 @@ export class CartService {
       this.cartProducts[idx].count--;
     }
     this.postToLocalStorage();
-    this.getSum()
+    this.getSum();
   }
 
   }

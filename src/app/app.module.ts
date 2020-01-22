@@ -11,11 +11,13 @@ import { AppRouterModule } from './app-routing.module';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlreadyaddedComponent } from './components/products/alreadyadded/alreadyadded.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
+    AlreadyaddedComponent,
     CartComponent
   ],
   imports: [

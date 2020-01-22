@@ -17,7 +17,12 @@ export class ProductsComponent implements OnInit {
 
   addProductToCart(id: number) {
     const selectedProduct = this.products.find((element) => element.id === id);
+    selectedProduct.randomId = (Math.random()*100).toFixed(0);
     this.cartService.addToCart(selectedProduct);
     this.cartService.updateCartCount();
+  }
+
+  closeAlreadyAddedModal() {
+    this.cartService.isAlreadiAdded = false;
   }
 }
